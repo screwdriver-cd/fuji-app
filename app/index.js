@@ -32,3 +32,4 @@ app.get('/', function (req, res, next) {
 });
 
 module.exports = app;
+app.listen(7000);

@@ -2,5 +2,4 @@ jobs:
     main:
         image: node:6
         steps:
-            - install: npm install
-            - test: npm test
+            - unittests: cd app/ && npm install && npm test
