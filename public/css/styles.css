@@ -1,0 +1,21 @@
+
+body {
+    font-family: calibri, verdana;
+    margin: 1em;
+    background: #D5EAA8;
+}
+
+h1 {
+    font-family: omnes-pro, sans-serif;
+    font-size: 2em;
+    font-weight: 100;
+}
+
+.photo {
+    display: inline-block;
+    padding: 0.5em;
+    margin: 0.25em;
+    float: left;
+    background: white;
+    border: 1px solid #ccc;
+}
