@@ -3,3 +3,7 @@ jobs:
         image: node:6
         steps:
             - unittests: cd app/ && npm install && npm test
+            - packer_build: ./bin/packer_build.sh
+        secrets:
+            - AWS_ACCESS_KEY_ID
+            - AWS_SECRET_ACCESS_KEY

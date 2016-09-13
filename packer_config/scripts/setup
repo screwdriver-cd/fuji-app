@@ -1,0 +1,20 @@
+#!/bin/sh
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+curl -sL https://deb.nodesource.com/setup_4.x — Node.js v4 LTS "Argon" | sudo bash -
+sudo apt-get -y install nodejs
+
+echo "packer: nginx"
+sudo mkdir -p /var/log/nginx
+sudo chown $INSTANCE_USER /var/log/nginx
+sudo chmod -R 755 /var/log/nginx
+
+echo "packer: nginx as a service"
+sudo update-rc.d nginx defaults
+
+echo "packer: nodejs"
+
+echo "packer: copying app files over"
+mkdir -p $HOME/app
+cp -r /tmp/scripts $HOME/app/scripts

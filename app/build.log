@@ -1,0 +1,3 @@
+1473724513,,ui,say,amazon-ebs output will be in this color.
+1473724513,,ui,say,
+1473724513,,ui,error,1 error(s) occurred:\n\n* Bad source 'packer_config/scripts': stat packer_config/scripts: no such file or directory

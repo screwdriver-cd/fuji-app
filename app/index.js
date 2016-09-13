@@ -31,5 +31,7 @@ app.get('/', function (req, res, next) {
     });
 });
 
+app.listen(8000);
+console.log("Server is now running at http://localhost:8000.");
+
 module.exports = app;
-app.listen(7000);
