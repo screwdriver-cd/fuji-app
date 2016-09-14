@@ -30,6 +30,7 @@ app.get('/', function (req, res, next) {
         }
     });
 });
+app.listen(8000);
+
 
 module.exports = app;
-app.listen(7000);
