@@ -1,6 +1,7 @@
 # fuji-app
 
-Demo app that shows Flickr images of Mount Fuji in a slideshow. Built by [Screwdriver](https://screwdriver.cd).
+Demo app that shows Flickr images of Mount Fuji in a slideshow. Built by
+[Screwdriver](https://screwdriver.cd) and deployed to AWS using CodeDeploy.
 
 To setup:
 ```bash
@@ -9,13 +10,12 @@ $ cd fuji-app/app/
 $ npm install
 ```
 
-To start:
+To start locally:
 ```bash
 $ cd fuji-app/app/
 $ npm start
 ```
 Navigate to http://localhost:8000.
-
 
 To test:
 ```bash

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# NAME=fuji-app-production
+NAME=fuji-app-production
 
 echo "packer: booting appserver daemon..."
-# sudo service $NAME start
-sudo service nginx start
+sudo service $NAME start
