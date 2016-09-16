@@ -14,6 +14,7 @@ To start:
 $ cd fuji-app/app/
 $ npm start
 ```
+
 Navigate to http://localhost:8000.
 
 

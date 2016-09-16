@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # isExistApp=`pgrep fuji-app-production`
 # if [[ -n  \$isExistApp ]]; then
 #    service fuji-app-production stop
