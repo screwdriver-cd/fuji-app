@@ -4,6 +4,7 @@
 #    service fuji-app-production stop
 # fi
 
+
 isExistApp=`pgrep nginx`
 if [[ -n  \$isExistApp ]]; then
    service nginx stop
