@@ -1,0 +1,22 @@
+---
+# This playbook creates AWS VPC, subnets, and route tables.
+
+- name: Load environment
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: Load configuration for {{ envName }}_{{ region }}
+    group_by: key="{{ envName }}_{{ region }}"
+
+  - debug: var=aws_vpc_cidr_block
+
+- name: Creating VPC
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  roles:
+    - vpc # Creates VPC, Subnets, IGW and Routes.
+    # - securityGroups

@@ -2,6 +2,8 @@
 
 Demo app that shows Flickr images of Mount Fuji in a slideshow. Built by [Screwdriver](https://screwdriver.cd).
 
+
+
 To setup:
 ```bash
 $ git clone git@github.com:screwdriver-cd/fuji-app.git
@@ -14,7 +16,7 @@ To start:
 $ cd fuji-app/app/
 $ npm start
 ```
-Navigate to http://localhost:7000.
+Navigate to http://localhost:8000.
 
 
 To test:

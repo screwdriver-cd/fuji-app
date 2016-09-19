@@ -1,0 +1,46 @@
+---
+# vars/{{region}}/main.yaml
+
+region: us-west-1
+az1: "{{ region }}a"
+az2: "{{ region }}c"
+az3: "{{ region }}d"
+
+envName: Dev
+
+# VPC setup
+aws_vpc_cidr_block: 172.31.0.0/16
+aws_vpc_az1_cidr_block_public: 172.31.0.0/20
+aws_vpc_az2_cidr_block_public: 172.31.32.0/20
+aws_vpc_az3_cidr_block_public: 172.31.64.0/20
+
+aws_vpc_subnets:
+  - cidr: "{{ aws_vpc_az1_cidr_block_public }}"
+    az: "{{ az1 }}"
+    resource_tags:
+      Name: "Subnet-{{ envName }}-{{ az1 }}-Public"
+      Environment: "{{ envName }}"
+      Network: "Public"
+
+  - cidr: "{{ aws_vpc_az2_cidr_block_public }}"
+    az: "{{ az2 }}"
+    resource_tags:
+      Name: "Subnet-{{ envName }}-{{ az2 }}-Public"
+      Environment: "{{ envName }}"
+      Network: "Public"
+
+  - cidr: "{{ aws_vpc_az3_cidr_block_public }}"
+    az: "{{ az3 }}"
+    resource_tags:
+      Name: "Subnet-{{ envName }}-{{ az3 }}-Public"
+      Environment: "{{ envName }}"
+      Network: "Public"
+
+aws_vpc_route_tables:
+  - subnets:
+     - "{{ aws_vpc_az1_cidr_block_public }}"
+     - "{{ aws_vpc_az2_cidr_block_public }}"
+     - "{{ aws_vpc_az3_cidr_block_public }}"
+    routes:
+      - dest: 0.0.0.0/0
+        gw: igw
