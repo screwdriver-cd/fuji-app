@@ -39,7 +39,7 @@ ${AWSCLI_DIR}/aws deploy create-deployment \
 
 echo "Get deployment id..."
 DEPLOYMENT_ID=`grep 'deploymentId' ${SOURCE_DIR}/app/deploy.txt | cut -d, -f6 | cut -d: -f2 | tr -d '"'`
-echo ${DEPLOYMENT_ID}
+echo $DEPLOYMENT_ID
 
 echo "Get status..."
 WAIT_TIME=0
@@ -54,13 +54,16 @@ done
 
 echo "Deployment ${DEPLOYMENT_STATUS}."
 
-# echo "Get status..."
-# NEXT_WAIT_TIME=0
-# DEPLOYMENT_STATUS="Pending"
-# until [ $DEPLOYMENT_STATUS == "Succeeded" ] || [ $NEXT_WAIT_TIME -eq 4 ]; do
-#   DEPLOYMENT_STATUS=`${AWSCLI_DIR}/aws deploy get-deployment --deployment-id ${DEPLOYMENT_ID} --query 'deploymentInfo.status' --output text`
-#   echo $DEPLOYMENT_STATUS
-#   sleep $(( NEXT_WAIT_TIME++ ))
-# done
-#
-# echo "Deployment ${DEPLOYMENT_STATUS}."
+if [ ${DEPLOYMENT_STATUS} == "Failed" ]; then
+  exit 0
+fi
+
+echo "Get instance id..."
+INSTANCE_ID=`${AWSCLI_DIR}/aws deploy list-deployment-instances --deployment-id ${DEPLOYMENT_ID} --instance-status-filter Succeeded --query "instancesList[0]" --output text`
+echo "Instance id=$INSTANCE_ID"
+
+PUBLIC_DNS=`${AWSCLI_DIR}/aws ec2 describe-instances --instance-id ${INSTANCE_ID} --query "Reservations[0].Instances[0].PublicDnsName" --output text`
+echo "Public DNS=$PUBLIC_DNS"
+
+echo "Acceptance test..."
+echo `curl ${PUBLIC_DNS}:8000`
