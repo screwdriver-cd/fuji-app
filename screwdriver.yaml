@@ -1,9 +1,16 @@
+workflow:
+    - publish
+
 jobs:
     main:
         image: node:6
         steps:
-            - unittests: cd app/ && npm install && npm test
-            - code_deploy: ./bin/code_deploy.sh
+            - install: cd app && npm install
+            - test: cd app && npm test
+    publish:
+        image: node:6
+        steps:
+            - deploy: ./bin/code_deploy.sh
         secrets:
             - AWS_ACCESS_KEY_ID
             - AWS_SECRET_ACCESS_KEY
