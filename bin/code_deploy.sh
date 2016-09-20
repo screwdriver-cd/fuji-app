@@ -35,4 +35,18 @@ ${AWSCLI_DIR}/aws deploy create-deployment \
   --application-name Fuji_App \
   --deployment-config-name CodeDeployDefault.OneAtATime \
   --deployment-group-name Fuji_DepGroup \
-  --s3-location bucket=fuji-app.demo,bundleType=zip,key=FujiApp.zip
+  --s3-location bucket=fuji-app.demo,bundleType=zip,key=FujiApp.zip >> ${SOURCE_DIR}/app/deploy.txt
+
+echo "Get deployment id..."
+DEPLOYMENT_ID=`grep 'deploymentId:' ${SOURCE_DIR}/app/deploy.txt | cut -d, -f6 | cut -d: -f2 | tr -d '"'`
+
+echo "Get status..."
+NEXT_WAIT_TIME=0
+DEPLOYMENT_STATUS="Pending"
+until [$DEPLOYMENT_STATUS == "Succeeded" ] || [ $NEXT_WAIT_TIME -eq 4 ]; do
+  DEPLOYMENT_STATUS=`${AWSCLI_DIR}/aws deploy get-deployment --deployment-id ${DEPLOYMENT_ID} --query 'deploymentInfo.status' --output text`
+  echo DEPLOYMENT_STATUS
+  sleep $(( NEXT_WAIT_TIME++ ))
+done
+
+echo `Deployment ${DEPLOYMENT_STATUS}.`
