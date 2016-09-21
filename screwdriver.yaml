@@ -10,7 +10,9 @@ jobs:
     publish:
         image: node:6
         steps:
+            - build: ./bin/build_package.sh
             - deploy: ./bin/code_deploy.sh
+            - test: ./bin/acceptance_test.sh
         secrets:
             - AWS_ACCESS_KEY_ID
             - AWS_SECRET_ACCESS_KEY
