@@ -32,5 +32,8 @@ sudo update-rc.d $NAME defaults
 echo "packer: moving uploaded server code"
 mv /tmp/appserver $HOME/app/server
 
+echo "packer: npm install"
+cd $HOME/app/server && npm install
+
 echo "packer: booting appserver daemon..."
 sudo service $NAME start

@@ -8,7 +8,7 @@
     vars:
       instance_type: t1.micro
       security_group: fuji-app.demo # Change the security group name here
-      image: ami-e86bb988 # Change the AMI, from which you want to launch the server
+      image: "{{ lookup('env','AMI_ID') }}" # Change the AMI, from which you want to launch the server (ami-e86bb988)
       region: us-west-2 # Change the Region
       keypair: fuji-app.demo # Change the keypair name
       count: 1

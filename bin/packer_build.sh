@@ -33,4 +33,4 @@ if [ -z "$AMI_ID" ]; then
     exit 2
 fi
 
-echo ${AMI_ID}
+echo ${AMI_ID} > ${SOURCE_DIR}/ami_id.txt

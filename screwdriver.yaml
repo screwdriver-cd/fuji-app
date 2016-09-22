@@ -7,7 +7,8 @@ jobs:
     publish:
         image: node:6
         steps:
-            - ansible: ./bin/ansible_playbook.sh
+            - packer_build: ./bin/packer_build.sh
+            - ansible_deploy: ./bin/ansible_playbook.sh
             - test: ./bin/acceptance_test.sh
         secrets:
             - AWS_ACCESS_KEY_ID
