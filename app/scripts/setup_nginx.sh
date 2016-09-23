@@ -48,8 +48,8 @@ sudo touch /var/log/$NAME.log
 sudo chown $INSTANCE_USER /var/log/$NAME.log
 sudo update-rc.d $NAME defaults
 
-echo "code_deploy: moving uploaded server code"
-mv /tmp/appserver $HOME/app/server
+# echo "code_deploy: moving uploaded server code"
+# mv /tmp/appserver $HOME/app/server
 
 echo "code_deploy: install node modules"
 cd $HOME/app/server

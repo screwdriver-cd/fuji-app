@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /var/www/html/app
   - source: /
-    destination: /tmp/appserver
+    destination: /var/www/html/app/server
   - source: /scripts
     destination: /tmp/scripts
 hooks:
