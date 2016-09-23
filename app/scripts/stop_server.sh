@@ -1,8 +1,8 @@
 #!/bin/bash
 
-isExistApp=`pgrep fuji-app-production`
+isExistApp=`pgrep node`
 if [[ -n  \$isExistApp ]]; then
-   service fuji-app-production stop
+   service node stop
 fi
 
 isExistApp=`pgrep nginx`
