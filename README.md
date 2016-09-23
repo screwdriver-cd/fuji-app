@@ -1,6 +1,6 @@
 # fuji-app
 
-Demo app that shows Flickr images of mount fuji in a slideshow. Built by
+Demo app that shows Flickr images of mount everest in a slideshow. Built by
 [Screwdriver](https://screwdriver.cd) and deployed to AWS using CodeDeploy.
 
 
