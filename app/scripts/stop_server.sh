@@ -2,7 +2,7 @@
 
 isExistApp=`pgrep node`
 if [[ -n  \$isExistApp ]]; then
-   service node stop
+   kill $isExistApp
 fi
 
 isExistApp=`pgrep nginx`
