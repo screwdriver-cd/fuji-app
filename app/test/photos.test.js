@@ -76,7 +76,7 @@ describe('Photo list', function () {
             delete requestArgs.qs.per_page;
             assert.equal(requestArgs.uri, 'https://api.flickr.com/services/rest/');
             assert.equal(requestArgs.qs.method, 'flickr.photos.search');
-            assert.equal(requestArgs.qs.tags, 'mount everest');
+            assert.equal(requestArgs.qs.tags, 'mount fuji');
             assert.equal(requestArgs.qs.format, 'json');
             done();
         });
