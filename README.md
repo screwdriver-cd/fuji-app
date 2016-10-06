@@ -2,7 +2,7 @@
 
 ![build](https://cd.screwdriver.cd/pipelines/ed63888963abff80783633aa3da6511c188be7c9/badge)
 
-Demo app that shows Flickr images of mount everest in a slideshow. Built by
+Demo app that shows Flickr images of the golden gate bridge in a slideshow. Built by
 [Screwdriver](https://screwdriver.cd) and deployed to AWS using CodeDeploy.
 
 
