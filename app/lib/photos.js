@@ -2,7 +2,7 @@
 var request = require('request'),
     vm = require('vm'),
     token = '46081a02eaa5123f97df07d28660db30',
-    tag = 'mount everest';
+    tag = 'golden gate bridge';
 
 function jsonFlickrApi(data) {
     return data.photos.photo;
