@@ -1,5 +1,7 @@
 # fuji-app
 
+![build](https://cd.screwdriver.cd/pipelines/ed63888963abff80783633aa3da6511c188be7c9/badge)
+
 Demo app that shows Flickr images of mount everest in a slideshow. Built by
 [Screwdriver](https://screwdriver.cd) and deployed to AWS using CodeDeploy.
 
@@ -107,7 +109,7 @@ Permission to assume the role we created:
 Access to the S3 bucket:
 ```
 {
-  "Version":"2012-10-17",  
+  "Version":"2012-10-17",
   "Statement":[
     {
       "Effect":"Allow",
