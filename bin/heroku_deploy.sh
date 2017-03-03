@@ -2,7 +2,9 @@
 
 set -e
 
-HEROKUCLI_DIR=/usr/local/bin
+echo ${SOURCE_DIR}
+
+HEROKUCLI_DIR=/usr/bin
 
 echo "Check Heroku version.."
 ${HEROKUCLI_DIR}/heroku --version

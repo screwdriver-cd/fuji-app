@@ -8,6 +8,7 @@ jobs:
             - npm-install: cd app/ && npm install
             - npm-test: npm test
     publish:
-        image: heroku/nodejs:latest
+        image: node:6
         steps:
-            - heroku-deploy: ./bin/heroku_deploy.sh
+            - install-heroku: . ./bin/install_heroku.sh
+            - heroku-deploy: . ./bin/heroku_deploy.sh
