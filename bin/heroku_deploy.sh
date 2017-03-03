@@ -2,7 +2,7 @@
 
 set -e
 
-sudo apt-get install heroku
+HEROKUCLI_DIR=/usr/local/bin
 
 echo "Check Heroku version.."
 ${HEROKUCLI_DIR}/heroku --version
