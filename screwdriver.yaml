@@ -11,4 +11,8 @@ jobs:
         image: node:6
         steps:
             - install-heroku: . ./bin/install_heroku.sh
+            - heroku-login: expect ./bin/heroku_login.exp
             - heroku-deploy: . ./bin/heroku_deploy.sh
+        secrets:
+            - HEROKU_EMAIL
+            - HEROKU_PASSWORD

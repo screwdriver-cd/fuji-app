@@ -12,3 +12,6 @@ curl -L https://cli-assets.heroku.com/apt/release.key | apt-key add -
 apt-get -y install apt-transport-https
 apt-get update
 apt-get -y install heroku
+
+echo "Installing expect.."
+apt-get -y install expect
