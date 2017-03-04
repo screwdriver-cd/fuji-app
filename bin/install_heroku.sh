@@ -13,5 +13,5 @@ apt-get -y install apt-transport-https
 apt-get update
 apt-get -y install heroku
 
-echo "Installing expect.."
-apt-get -y install expect
+# echo "Installing expect.."
+# apt-get -y install expect
