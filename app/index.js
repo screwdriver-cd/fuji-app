@@ -32,4 +32,4 @@ app.get('/', function (req, res, next) {
 });
 
 module.exports = app;
-app.listen(7000);
+app.listen(process.env.PORT || 7000);

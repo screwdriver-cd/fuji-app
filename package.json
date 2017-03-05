@@ -1,0 +1,48 @@
+{
+  "name": "screwdriver-test-app",
+  "version": "0.0.0",
+  "engines": {
+    "node": "6.0.0"
+  },
+  "description": "Test app for Screwdriver",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/index.js",
+    "test": "jenkins-mocha test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:screwdriver-cd/fuji-app.git"
+  },
+  "homepage": "https://github.com/screwdriver-cd/fuji-app",
+  "bugs": "https://github.com/screwdriver-cd/fuji-app/issues",
+  "keywords": [
+    "fuji",
+    "test",
+    "app",
+    "screwdriver",
+    "yahoo"
+  ],
+  "license": "BSD-3-Clause",
+  "author": "Tiffany Kyi <tiffanykyi@gmail.com>",
+  "contributors": [
+    "Dao Lam <daolam112@gmail.com>",
+    "Darren Matsumoto <aeneascorrupt@gmail.com>",
+    "Jeremiah Wuenschel <jeremiah.wuenschel@gmail.com>",
+    "Min Zhang <minzhang@andrew.cmu.edu>",
+    "Noah Katzman <nbkatzman@gmail.com>",
+    "Peter Peterson <jedipetey@gmail.com>",
+    "St. John Johnson <st.john.johnson@gmail.com"
+  ],
+  "devDependencies": {
+    "chai": "~1.10.0",
+    "jenkins-mocha": "^3.0.0",
+    "mockery": "~1.4.0",
+    "sinon": "1.9.x"
+  },
+  "dependencies": {
+    "express": "~3.5.0",
+    "request": "~2.34.0",
+    "express3-handlebars": "0.5.x"
+  }
+}

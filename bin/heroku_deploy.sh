@@ -17,9 +17,5 @@ EOF
 
 chmod 600 ~/.netrc
 
-echo "Create Heroku app.."
-cd ${SOURCE_DIR}/app
-${HEROKUCLI_DIR}/heroku create
-
 echo "Deploy Heroku app.."
 git push heroku heroku:master
