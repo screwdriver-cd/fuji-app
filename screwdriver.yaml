@@ -15,3 +15,4 @@ jobs:
         secrets:
             - HEROKU_EMAIL
             - HEROKU_TOKEN
+            - HEROKU_APP
