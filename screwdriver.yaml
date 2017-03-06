@@ -10,10 +10,9 @@ jobs:
     publish:
         image: node:6
         steps:
-            - install-heroku: . ./bin/install_heroku.sh
-            - heroku-deploy: . ./bin/heroku_deploy.sh
+            - install-dependencies: . ./bin/install.sh
+            - test: npm test && cd ..
+            - deploy-heroku: . ./bin/create_tarball.sh
         secrets:
-            - HEROKU_EMAIL
-            - HEROKU_TOKEN
+            - HEROKU_API_KEY
             - HEROKU_APP
-            - PUBLIC_SSH_KEY
